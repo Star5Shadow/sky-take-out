@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.xml.transform.Result;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -93,7 +94,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 分页查询
-     * @param employeeDTO
+     * @param employeePageQueryDTO)
      */
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO){
         //开始分页查询
@@ -104,4 +105,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(total, records);
     }
 
+    /**
+     *
+     * @param status
+     * @param id
+     */
+    public void startOrStop(Integer status, Long id) {
+        Employee employee = new Employee();
+        employee.setStatus(status);
+        employee.setId(id);
+        employeeMapper.update(employee);
+    }
 }
