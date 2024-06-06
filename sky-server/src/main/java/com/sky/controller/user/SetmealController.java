@@ -23,18 +23,6 @@ public class SetmealController {
     private SetmealService setmealService;
 
     /**
-     * 新增套餐
-     * @param setmealDTO
-     * @return
-     */
-    @PostMapping
-    @ApiOperation("新增套餐")
-    public Result save(@RequestBody SetmealDTO setmealDTO) {
-        setmealService.saveWithDish(setmealDTO);
-        return Result.success();
-    }
-
-    /**
      * 条件查询
      *
      * @param categoryId
