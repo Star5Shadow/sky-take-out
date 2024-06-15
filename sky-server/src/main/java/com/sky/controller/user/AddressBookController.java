@@ -19,7 +19,7 @@ public class AddressBookController {
     private AddressBookService addressBookService;
 
     /**
-     * 查询当前登录用户的所有地址信息
+     * 查询当前登录用户的地址信息
      *
      * @return
      */
